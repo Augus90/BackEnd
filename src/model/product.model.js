@@ -1,10 +1,23 @@
 const { Sequelize, DataTypes, Model } = require("sequelize");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const sequelize = new Sequelize("product_test", "root", "clb151539", {
-  host: "192.168.0.4",
-  port: 3306,
-  dialect: "mysql",
-});
+// const sequelize = new Sequelize("2PieceInfo", "root", "Surely0101", {
+//   host: "10.173.5.17",
+//   port: 3307,
+//   dialect: "mysql",
+// });
+
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASS,
+  {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: "mysql",
+  }
+);
 
 // async function testConnection() {
 //   try {

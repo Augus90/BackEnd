@@ -9,8 +9,8 @@ POST {{BaseUrl}}/products HTTP/1.1
 Content-Type: application/json
 
 {
-  "product_name": "shirt",
-  "price": "12",
+  "product_name": "apple",
+  "price": "1.5",
   "is_stock": "true"
 }
 
