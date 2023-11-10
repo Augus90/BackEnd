@@ -1,0 +1,36 @@
+@BaseUrl = http://localhost:3001/api/v1
+@Product_id = 7427e31c-2dbf-4382-bbd0-25ab778dc1ad
+
+GET {{BaseUrl}}/products HTTP/1.1
+
+###
+
+POST {{BaseUrl}}/products HTTP/1.1
+Content-Type: application/json
+
+{
+  "product_name": "shirt",
+  "price": "12",
+  "is_stock": "true"
+}
+
+###
+
+
+GET {{BaseUrl}}/products/{{Product_id}} HTTP/1.1
+
+
+###
+
+PUT  {{BaseUrl}}/products/{{Product_id}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "product_name": "t-shirt",
+  "price": "15",
+  "is_stock": "true"
+}
+
+###
+
+DELETE {{BaseUrl}}/products/{{Product_id}} HTTP/1.1
