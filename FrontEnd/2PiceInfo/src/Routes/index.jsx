@@ -18,9 +18,9 @@ const Index = () => {
         {mode ? "serial" : "number"}
       </button> */}
       {mode ? (
-        <Serials isSerial={mode} click={setMode} />
-      ) : (
         <Numbers click={setMode} />
+      ) : (
+        <Serials isSerial={mode} click={setMode} />
       )}
     </div>
   );
