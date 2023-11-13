@@ -1,18 +1,26 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { getNumberFromSerial } from "../../common/API";
+import IconChange from "../../common/iconChange";
 // const baseURL = import.meta.env.API_URL;
 const baseURL = "http://localhost:3001/api/v1";
 
-const Numbers = ({ isSerial }) => {
+const Numbers = ({ click }) => {
   const [responceInfo, setResponceInfo] = useState();
   const [form, setForm] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log(`${baseURL}/serial/${form}`);
-    const response = await axios.get(`${baseURL}/number/${form}`);
-    setResponceInfo(response.data);
-    console.log(response.data);
+    // const response = await axios.get(`${baseURL}/number/${form}`);
+    const number = await getNumberFromSerial(form);
+
+    if (!number) {
+      alert("Invalid number");
+    }
+
+    setResponceInfo(number);
+    console.log(number);
   };
 
   return (
@@ -50,11 +58,17 @@ const Numbers = ({ isSerial }) => {
               disabled
               placeholder="Proveedor"
               value={responceInfo && responceInfo[0]["Proveedor celular"]}
-              className="self-center p-2 w-2/4 font-mono"
+              className="self-center p-2 w-2/4 font-mono rounded-md"
             ></input>
           </div>
         </div>
       </form>
+      <button
+        className="relative text-blue-700 sm:text-white bottom-48 right-12"
+        onClick={() => click((mode) => (mode = true))}
+      >
+        <IconChange />
+      </button>
     </div>
   );
 };

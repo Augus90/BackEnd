@@ -1,18 +1,21 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { getSerialFromNumber } from "../../common/API";
+import IconChange from "../../common/iconChange";
 // const baseURL = import.meta.env.API_URL;
 const baseURL = "http://localhost:3001/api/v1";
 
-const Serials = ({ isSerial }) => {
+const Serials = ({ click }) => {
   const [responceInfo, setResponceInfo] = useState();
   const [form, setForm] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log(`${baseURL}/serial/${form}`);
-    const response = await axios.get(`${baseURL}/serial/${form}`);
-    setResponceInfo(response.data);
-    console.log(response.data);
+    // const response = await axios.get(`${baseURL}/serial/${form}`);
+    const serial = await getSerialFromNumber(form);
+    setResponceInfo(serial);
+    // console.log(serial);
   };
 
   return (
@@ -24,7 +27,7 @@ const Serials = ({ isSerial }) => {
         <div className="flex justify-center align-middle h-1/2 sm:h-fit p-2 self-center">
           <input
             type="text"
-            placeholder="Serial"
+            placeholder="Serie"
             onChange={(e) => setForm(e.target.value)}
             className="px-5 mx-4 w-40 h-1/4 self-center sm:h-14 sm:self-center text-blue-700 font-bold font-mono rounded-md border-blue-500 focus:ring-indigo-600"
           ></input>
@@ -50,11 +53,17 @@ const Serials = ({ isSerial }) => {
               disabled
               placeholder="Numero Movistar"
               value={responceInfo && responceInfo[1]["Numero de datos"]}
-              className="self-center p-2 w-2/4 font-mono"
+              className="self-center p-2 w-2/4 font-mono rounded-md"
             ></input>
           </div>
         </div>
       </form>
+      <button
+        className="relative text-blue-700 sm:text-white bottom-48 right-12"
+        onClick={(mode) => click(!mode)}
+      >
+        <IconChange />
+      </button>
     </div>
   );
 };

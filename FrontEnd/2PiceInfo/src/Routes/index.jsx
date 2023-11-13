@@ -14,10 +14,14 @@ const Index = () => {
 
   return (
     <div className="flex ">
-      <button type="button" onClick={() => setMode(!mode)}>
+      {/* <button type="button" onClick={() => setMode(!mode)}>
         {mode ? "serial" : "number"}
-      </button>
-      {mode ? <Serials isSerial={mode} /> : <Numbers />}
+      </button> */}
+      {mode ? (
+        <Serials isSerial={mode} click={setMode} />
+      ) : (
+        <Numbers click={setMode} />
+      )}
     </div>
   );
 };
