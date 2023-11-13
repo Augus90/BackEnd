@@ -1,6 +1,10 @@
 @BaseUrl = http://localhost:3001/api/v1
 @Product_id = 7427e31c-2dbf-4382-bbd0-25ab778dc1ad
 
+@serial = 35634120
+
+@number = 66437880
+
 GET {{BaseUrl}}/products HTTP/1.1
 
 ###
@@ -34,3 +38,10 @@ Content-Type: application/json
 ###
 
 DELETE {{BaseUrl}}/products/{{Product_id}} HTTP/1.1
+
+###
+
+GET {{BaseUrl}}/serial/{{serial}} HTTP/1.1
+###
+
+GET {{BaseUrl}}/number/{{number}} HTTP/1.1
