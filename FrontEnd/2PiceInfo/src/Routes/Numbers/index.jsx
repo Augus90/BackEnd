@@ -2,8 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import { getNumberFromSerial } from "../../common/API";
 import IconChange from "../../common/iconChange";
-// const baseURL = import.meta.env.API_URL;
-const baseURL = "http://localhost:3001/api/v1";
 
 const Numbers = ({ click }) => {
   const [responceInfo, setResponceInfo] = useState();
@@ -57,7 +55,7 @@ const Numbers = ({ click }) => {
                 type="number"
                 disabled
                 placeholder="Serie"
-                value={responceInfo && responceInfo[0]["Numero de Serie"]}
+                value={responceInfo && responceInfo[0]["Numero de serie"]}
                 className="self-center p-2 w-2/4 font-mono rounded-md "
               ></input>
             </div>

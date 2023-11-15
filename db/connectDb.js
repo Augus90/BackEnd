@@ -17,17 +17,17 @@ const rowsName = {
 async function obtenerSerials(campo, valor) {
   // Configuración de la conexión a la base de datos
   const connection = await mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
+    host: process.env.DB_HOST || "Localhost",
+    user: process.env.DB_USER || "root",
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
+    port: process.env.DB_PORT || 3306,
   });
 
   try {
     // Realiza la consulta para obtener todos los registros de la tabla "Listar_lineas"
     const [rows, fields] = await connection.query(
-      `SELECT * FROM Listado_Lineas WHERE \`${campo}\` = ?`,
+      `SELECT * FROM ${process.env.DB_TABLE} WHERE \`${campo}\` = ?`,
       [valor]
     );
 

@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3001/api/v1";
+// const baseURL = "http://10.173.5.33:3001/api/v1";
+const baseURL = import.meta.env.VITE_BASE_URL;
 
 export const getSerialFromNumber = async (number) => {
   const serial = await axios
