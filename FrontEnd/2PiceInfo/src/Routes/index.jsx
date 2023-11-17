@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Serials from "./Serials";
-import { fa } from "@faker-js/faker";
+// import { fa } from "@faker-js/faker";
 import Numbers from "./Numbers";
 
 const MODES = {
