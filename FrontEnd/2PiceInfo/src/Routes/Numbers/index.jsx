@@ -33,6 +33,7 @@ const Numbers = ({ click }) => {
               Telefono
             </h3>
             <button
+              type="button"
               className=" text-blue-700 md:text-white"
               onClick={() => click((mode) => (mode = false))}
             >

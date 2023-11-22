@@ -14,6 +14,11 @@ const Serials = ({ click }) => {
     // console.log(`${baseURL}/serial/${form}`);
     // const response = await axios.get(`${baseURL}/serial/${form}`);
     const serial = await getSerialFromNumber(form);
+
+    if (!serial) {
+      alert("Invalid Serial");
+    }
+
     setResponceInfo(serial);
     // console.log(serial);
   };
@@ -25,15 +30,26 @@ const Serials = ({ click }) => {
         className="h-[50vh] w-full  bg-white/75 rounded-xl shadow-black shadow-2xl  md:grid md:grid-cols-2 flex flex-col justify-between self-center"
       >
         <div className="flex flex-col h-1/2 md:h-full ">
-          <h3 className="absolute text-blue-600 font-bold p-4 text-3xl">
-            Serie
-          </h3>
+          <div className="absolute w-[340px] md:w-[680px] flex justify-between">
+            <h3 className=" text-blue-600 font-bold p-4 text-3xl">Serie</h3>
+            <button
+              type="button"
+              className=" text-blue-700 md:text-white bottom-48 right-12"
+              onClick={() => click((mode) => (mode = true))}
+            >
+              <IconChange />
+            </button>
+          </div>
+
           <div className="flex h-full p-2 ">
             <div className="h-full flex self-center gap-4">
               <input
                 type="text"
+                value={form}
                 placeholder="Serie"
-                onChange={(e) => setForm(e.target.value)}
+                onChange={(e) => {
+                  setForm(e.target.value);
+                }}
                 className="px-5 mx-4 w-40 h-1/4 self-center sm:h-14 sm:self-center text-blue-700 font-bold font-mono rounded-md border-blue-500 focus:ring-indigo-600"
               ></input>
               <button className="m-4 h-14 px-6 self-center rounded-lg border border-blue-300 text-white bg-blue-800">
@@ -70,12 +86,6 @@ const Serials = ({ click }) => {
           {/* </div> */}
         </div>
       </form>
-      <button
-        className="relative text-blue-700 md:text-white bottom-48 right-12"
-        onClick={() => click((mode) => (mode = true))}
-      >
-        <IconChange />
-      </button>
     </div>
   );
 };
