@@ -1,7 +1,7 @@
 @BaseUrl = http://localhost:3001/api/v1
 @Product_id = 7427e31c-2dbf-4382-bbd0-25ab778dc1ad
 
-@serial = 35634120
+@serial = 35614177
 
 @number = 26828398
 

@@ -5,7 +5,7 @@ const baseURL = import.meta.env.VITE_BASE_URL;
 
 export const getSerialFromNumber = async (number) => {
   const serial = await axios
-    .get(`${baseURL}/serial/${number}`)
+    .get(`${baseURL}serial/${number}`)
     .catch((err) => err);
 
   return serial.data;
@@ -13,7 +13,7 @@ export const getSerialFromNumber = async (number) => {
 
 export const getNumberFromSerial = async (serial) => {
   const number = await axios
-    .get(`${baseURL}/number/${serial}`)
+    .get(`${baseURL}number/${serial}`)
     .catch((err) => err);
 
   return number.data;
