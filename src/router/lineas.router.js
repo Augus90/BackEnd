@@ -15,8 +15,10 @@ router.get("/serial/:serial", async function (req, res) {
 router.get("/number/:number", async function (req, res) {
   const number = req.params.number;
   const serial = await new dbConsult().number(number).connect();
-  const allNumbers = await new dbConsult().number(serial).connect();
-  if (allNumbers.length > 0) {
+  const allNumbers = await new dbConsult()
+    .serial(serial[0]["Numero de serie"])
+    .connect();
+  if (allNumbers.length) {
     res.status(200).json(allNumbers);
   } else {
     res.status(404);

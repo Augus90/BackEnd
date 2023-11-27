@@ -70,12 +70,12 @@ const Numbers = ({ click }) => {
               ></input>
             </div>
             <div className="flex justify-center gap-4 align-middle">
-              <p className="w-1/4 self-center font-semibold">Proveedor</p>
+              <p className="w-1/4 self-center font-semibold">Secundario</p>
               <input
                 type="text"
                 disabled
                 placeholder="Proveedor"
-                value={responceInfo && responceInfo[0]["Proveedor celular"]}
+                value={responceInfo && responceInfo[1]["Numero de datos"]}
                 className="w-2/4 self-center rounded-md p-2 font-mono"
               ></input>
             </div>

@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const rowsName = {
-  serie: `Numero de Serie`,
+  serie: "Numero de Serie",
   equipo: "Tipo de Equipo",
   agencia: "Agencia",
   proveedor: "Proveedor celular",
@@ -14,8 +14,10 @@ const rowsName = {
   isPrimario: `pri=1/sec=0`,
 };
 
-
-  console.log("HOST",`Host: ${process.env.DB_HOST}:${process.env.DB_PORT} user: ${process.env.DB_USER}:${process.env.DB_PASS}`)
+console.log(
+  "HOST",
+  `Host: ${process.env.DB_HOST}:${process.env.DB_PORT} user: ${process.env.DB_USER}:${process.env.DB_PASS}`
+);
 
 async function obtenerSerials(campo, valor) {
   // Configuración de la conexión a la base de datos
@@ -26,7 +28,6 @@ async function obtenerSerials(campo, valor) {
     database: process.env.DB_NAME,
     port: process.env.DB_PORT || 3306,
   });
-  
 
   try {
     // Realiza la consulta para obtener todos los registros de la tabla "Listar_lineas"
