@@ -22,14 +22,14 @@ const Numbers = ({ click }) => {
   };
 
   return (
-    <div className="flex max-w-[900px]">
+    <div className=" flex max-w-[900px]">
       <form
         onSubmit={handleSubmit}
-        className="flex h-[50vh] w-full flex-col  justify-between self-center rounded-xl bg-white/75  shadow-2xl shadow-black md:grid md:grid-cols-2 "
+        className="flex h-[50vh] w-full flex-col justify-between  self-center rounded-xl  shadow-2xl  shadow-black backdrop-blur-xl md:grid md:grid-cols-2 "
       >
-        <div className="flex h-1/2 flex-col md:h-full ">
+        <div className=" flex h-1/2 flex-col md:h-full">
           <div className="absolute flex w-[340px] justify-between md:w-[680px]">
-            <h3 className=" flex-1 p-4 text-3xl font-bold text-blue-600">
+            <h3 className=" flex-1 p-4 text-3xl font-bold text-blue-600 ">
               Telefono
             </h3>
             <button
@@ -55,7 +55,7 @@ const Numbers = ({ click }) => {
             </div>
           </div>
         </div>
-        <div className="flex h-1/2 flex-col rounded-e-xl bg-blue-700 p-4 shadow-lg shadow-black md:h-full">
+        <div className="flex h-1/2 flex-col rounded-e-xl bg-blue-700/95 p-4 shadow-lg shadow-black  md:h-full">
           {/* <div className=" p-4 h-full flex flex-col gap-4"> */}
           <h3 className="absolute text-3xl font-bold text-white">Serie</h3>
           <div className="flex h-full flex-col justify-center gap-4">

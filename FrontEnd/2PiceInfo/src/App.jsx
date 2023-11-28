@@ -5,7 +5,7 @@ import "../public/wickedbackground.svg";
 
 function App() {
   return (
-    <div className="flex h-screen justify-center align-middle">
+    <div className="backgroundCSS flex h-screen justify-center align-middle">
       <Index />
     </div>
   );
