@@ -1,9 +1,11 @@
 @BaseUrl = http://localhost:3001/api/v1
 @Product_id = 7427e31c-2dbf-4382-bbd0-25ab778dc1ad
 
-@serial = 35614177
+@serial = 35607709
 
 @number = 26828398
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiVHVlIERlYyAwNSAyMDIzIDE3OjM5OjUzIEdNVC0wMzAwIChob3JhIGVzdMOhbmRhciBkZSBBcmdlbnRpbmEpIiwidXNlcklkIjoxMiwiaWF0IjoxNzAxODA4NzkzfQ.uBiD6eeMRWFBRWIRhCdqhr6bZf3_hcELUOfVLuBzef4
 
 GET {{BaseUrl}}/products HTTP/1.1
 
@@ -45,3 +47,11 @@ GET {{BaseUrl}}/serial/{{serial}} HTTP/1.1
 ###
 
 GET {{BaseUrl}}/number/{{number}} HTTP/1.1
+
+###
+
+POST {{BaseUrl}}/user/generateToken HTTP/1.1
+###
+
+GET  {{BaseUrl}}/user/validateToken HTTP/1.1
+Authorization: Bearer {{token}}

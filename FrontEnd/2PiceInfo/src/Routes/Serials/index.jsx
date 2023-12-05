@@ -20,7 +20,7 @@ const Serials = ({ click }) => {
     }
 
     setResponceInfo(serial);
-    // console.log(serial);
+    console.log("Serial", serial);
   };
 
   return (
@@ -50,7 +50,7 @@ const Serials = ({ click }) => {
                 onChange={(e) => {
                   setForm(e.target.value);
                 }}
-                className="mx-4 h-1/4 w-40 self-center rounded-md border-blue-500 px-5 font-mono font-bold text-blue-700 focus:ring-indigo-600 sm:h-14 sm:self-center"
+                className="font-mono mx-4 h-1/4 w-40 self-center rounded-md border-blue-500 px-5 font-bold text-blue-700 focus:ring-indigo-600 sm:h-14 sm:self-center"
               ></input>
               <button className="m-4 h-14 self-center rounded-lg border border-blue-300 bg-blue-800 px-6 text-white">
                 Buscar
@@ -69,7 +69,7 @@ const Serials = ({ click }) => {
                 disabled
                 placeholder="Numero Claro"
                 value={responceInfo && responceInfo[0]["Numero de datos"]}
-                className="w-2/4 self-center rounded-md p-2 font-mono "
+                className="font-mono w-2/4 self-center rounded-md p-2 "
               ></input>
             </div>
             <div className="flex justify-center gap-4 align-middle">
@@ -79,7 +79,7 @@ const Serials = ({ click }) => {
                 disabled
                 placeholder="Numero Movistar"
                 value={responceInfo && responceInfo[1]["Numero de datos"]}
-                className="w-2/4 self-center rounded-md p-2 font-mono"
+                className="font-mono w-2/4 self-center rounded-md p-2"
               ></input>
             </div>
           </div>

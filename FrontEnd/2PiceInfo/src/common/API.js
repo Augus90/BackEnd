@@ -8,7 +8,9 @@ export const getSerialFromNumber = async (number) => {
     .get(`${baseURL}serial/${number}`)
     .catch((err) => err);
 
-  return serial.data;
+  const data = serial.data["eqipment"];
+
+  return data;
 };
 
 export const getNumberFromSerial = async (serial) => {
@@ -16,5 +18,5 @@ export const getNumberFromSerial = async (serial) => {
     .get(`${baseURL}number/${serial}`)
     .catch((err) => err);
 
-  return number.data;
+  return number.data["equipment"];
 };
